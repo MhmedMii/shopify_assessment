@@ -1,0 +1,11 @@
+.assessment-discount-percentage {
+  display: inline-block;
+  margin-inline-start: 8px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background-color: #e5f5e9;
+  color: #176b35;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
