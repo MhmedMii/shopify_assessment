@@ -82,6 +82,17 @@
 
               <tbody>
                 {%- for item in cart.items -%}
+                {%- liquid
+                assign cart_compare_at = item.variant.compare_at_price
+                assign cart_price = item.variant.price
+                assign cart_discount_percentage = 0
+
+            if cart_compare_at > cart_price and cart_compare_at > 0
+            assign cart_discount_amount = cart_compare_at | minus: cart_price
+            assign cart_discount_percentage = cart_discount_amount | times: 100.0 | divided_by: cart_compare_at | round
+            endif
+            -%}
+
                   <tr
                     class="cart-item {% if item.parent_relationship.parent != null %}cart-item__nested-line{% endif %}"
                     id="CartItem-{{ item.index | plus: 1 }}"
@@ -134,12 +145,29 @@
                           <strong class="cart-item__final-price product-option">
                             {{ item.final_price | money }}
                           </strong>
+                      {%- if cart_discount_percentage > 0 -%}
+                      <span class="assessment-discount-percentage">
+                      -{{ cart_discount_percentage }}%
+                      </span>
+                      {%- endif -%}
                         </div>
                       {%- else -%}
                         <div class="product-option">
                           {{ item.original_price | money }}
                         </div>
                       {%- endif -%}
+
+                      {%- else -%}
+                      <div class="product-option">
+                      {{ item.original_price | money }}
+
+                  {%- if cart_discount_percentage > 0 -%}
+                  <span class="assessment-discount-percentage">
+                  -{{ cart_discount_percentage }}%
+
+                  </span>
+                  </div>
+                  {%- endif -%}
 
                       {%- if item.product.has_only_default_variant == false
                         or item.properties.size != 0
