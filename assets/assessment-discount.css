@@ -1,6 +1,7 @@
 .assessment-discount-percentage {
   display: inline-block;
   margin-inline-start: 8px;
+   margin-inline-end: 12px;
   padding: 3px 8px;
   border-radius: 4px;
   background-color: #e5f5e9;
