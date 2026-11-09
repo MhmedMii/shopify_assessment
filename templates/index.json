@@ -24,7 +24,7 @@
           "settings": {
             "button_label_1": "Shop all",
             "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
+            "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
             "button_style_secondary_2": false
@@ -38,7 +38,7 @@
       "settings": {
         "image": "shopify://shop_images/Screenshot_2026-11-09_at_1.30.56_PM.png",
         "image_overlay_opacity": 40,
-        "image_height": "large",
+        "image_height": "adapt",
         "image_behavior": "none",
         "desktop_content_position": "bottom-center",
         "desktop_content_alignment": "center",
