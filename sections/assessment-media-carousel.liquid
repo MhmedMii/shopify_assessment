@@ -1,0 +1,115 @@
+{{ 'assessment-media-carousel.css' | asset_url | stylesheet_tag }}
+
+<div
+  class="page-width"
+  style="
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  "
+>
+  <div
+    class="assessment-blocks"
+    style="
+      display: grid;
+      gap: {{ section.settings.block_spacing }}px;
+    "
+  >
+    {% for block in section.blocks %}
+      {% if block.type == 'media' %}
+        <div {{ block.shopify_attributes }}>
+          {% render 'assessment-media', block: block %}
+        </div>
+      {% endif %}
+      {% endfor %}
+      </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Assessment Media Carousel",
+  "max_blocks": 2,
+"settings": [
+  {
+    "type": "range",
+    "id": "padding_top",
+    "label": "Top padding",
+    "min": 0,
+    "max": 100,
+    "step": 4,
+    "unit": "px",
+    "default": 40
+  },
+  {
+    "type": "range",
+    "id": "padding_bottom",
+    "label": "Bottom padding",
+    "min": 0,
+    "max": 100,
+    "step": 4,
+    "unit": "px",
+    "default": 40
+  },
+  {
+    "type": "range",
+    "id": "block_spacing",
+    "label": "Space between blocks",
+    "min": 0,
+    "max": 100,
+    "step": 4,
+    "unit": "px",
+    "default": 24
+  }
+],
+  "blocks": 
+  [
+    {
+    "type": "media",
+    "name": "Media",
+    "limit": 1,
+    "settings": [
+        {
+      "type": "image_picker",
+      "id": "media_image",
+      "label": "Image"
+    },
+    
+{
+  "type": "video",
+  "id": "media_video",
+  "label": "Video"
+},
+{
+  "type": "text",
+  "id": "button_label",
+  "label": "Button label",
+  "default": "Shop now"
+},
+{
+  "type": "url",
+  "id": "button_link",
+  "label": "Button link"
+}
+    ]
+  },
+  {
+    "type": "product_carousel",
+    "name": "Product Carousel",
+    "limit": 1,
+    "settings": []
+    }
+  ],
+  "presets": 
+  [
+    {
+      "name": "Assessment Media Carousel",
+      "blocks": 
+      [
+        {
+          "type": "media"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
