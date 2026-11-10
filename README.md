@@ -41,6 +41,18 @@ For example, an item originally priced at 15 KWD and reduced to 12 KWD has a **2
 | `sections/main-cart-items.liquid` | Cart discount information |
 | `layout/theme.liquid` | Loads the custom discount stylesheet inside the HTML `<head>` |
 
+### Screenshots
+
+![Product discount example](screenshots/q1-product-discount.png)
+
+![Collection discount examples](screenshots/q1-collection-discounts.png)
+
+![Additional product listings](screenshots/q1-all-products.png)
+
+![Remaining collection products](screenshots/q1-additional-products.png)
+
+![Cart discount percentages](screenshots/q1-cart-discounts.png)
+
 ### Verification Results
 
 - Verified the percentage badge on product listings, individual product pages, and the cart.
@@ -63,6 +75,12 @@ For example, an item originally priced at 15 KWD and reduced to 12 KWD has a **2
 - Added image and video picker settings in the Shopify Theme Editor.
 - Added responsive media sizing through a separate CSS asset.
 - Added button label and link settings and conditional link markup in the Media snippet; complete styling and positioning were not implemented.
+
+### Screenshots
+
+![Media section rendering and settings](screenshots/q2-section-media-rendering.png)
+
+![Media block configuration in Theme Editor](screenshots/q2-media-block-settings.png)
 
 ### Verification Results
 
@@ -108,6 +126,10 @@ The remaining requirements were reviewed and the implementation approach was pla
 - Determined sale status by comparing variant prices.
 - Generated a CSV file containing the required columns.
 - Added validation to detect incomplete variant or collection results.
+
+### Screenshot
+
+![Product export CSV with Boolean Sale values](screenshots/q3-csv-export.png)
 
 ### CSV Output
 
