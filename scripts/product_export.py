@@ -37,7 +37,7 @@ def prepare_product_for_csv(shopify_product):
         ),
         "Collections": ", ".join(product_collection_names),
         "Tags": ", ".join(shopify_product["tags"]),
-        "Sale": "Yes" if product_is_on_sale else "No",
+        "Sale": product_is_on_sale,
     }
 
 
