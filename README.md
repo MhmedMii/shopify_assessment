@@ -39,7 +39,59 @@ For example, an item originally priced at 15 KWD and reduced to 12 KWD has a **2
 | `snippets/price.liquid` | Product pricing and discount percentage display |
 | `assets/assessment-discount.css` | Discount badge styling |
 | `sections/main-cart-items.liquid` | Cart discount information |
-| `layout/theme.liquid` | Loads the custom discount stylesheet |
+| `layout/theme.liquid` | Loads the custom discount stylesheet inside the HTML `<head>` |
+
+### Verification Results
+
+- Verified the percentage badge on product listings, individual product pages, and the cart.
+- Confirmed **20%** for Classic Black T-Shirt, **25%** for White Cotton Shirt, and **29%** (rounded) for Slim Fit Jeans.
+- Confirmed regular-priced products remain without a percentage-discount badge.
+- Moved the custom discount stylesheet reference inside the HTML `<head>`.
+- Shopify Theme Check reported **0 errors and 9 existing warnings**; changes were committed and synchronized with GitHub.
+
+---
+
+## Q2 — Reusable Media & Product Carousel (Partially Completed)
+
+**Objective:** Build a reusable Shopify section supporting Media and Product Carousel blocks with configurable settings.
+
+### Implementation
+
+- Created a custom reusable Shopify section with Media and Product Carousel block definitions (maximum two blocks, one of each type).
+- Added configurable top padding, bottom padding, and spacing between blocks.
+- Created a dedicated Media snippet for image and Shopify-hosted video rendering logic.
+- Added image and video picker settings in the Shopify Theme Editor.
+- Added responsive media sizing through a separate CSS asset.
+- Added button label and link settings and conditional link markup in the Media snippet; complete styling and positioning were not implemented.
+
+### Verification Results
+
+- Added the custom section in Shopify's Theme Editor and selected a media image successfully.
+- Verified the selected image renders on the storefront preview and checked its desktop layout.
+- Confirmed the section's padding, spacing and Media settings appear in the editor.
+- Shopify Theme Check reported **0 errors** with **9 existing warnings**.
+- Video upload testing was blocked by the development store's account restrictions; video rendering remains unverified.
+
+### Remaining Requirements
+
+- Complete and test button colors, styling and left/center/right placement over media.
+- Implement collection product selection, up to three pinned products, maximum carousel elements, duplicate prevention and product cards.
+- Implement configurable visible-product counts (default 4 desktop / 2 mobile) and carousel navigation.
+- Ensure Media renders before Product Carousel when both blocks exist.
+- Ensure multiple instances are independently styled and implement first-instance media priority with lazy loading for later instances.
+- Complete mobile, multiple-instance and video testing.
+
+### Implementation Status
+
+The remaining requirements were reviewed and the implementation approach was planned, but development was not completed within the assessment timeframe. Completed functionality is documented separately from outstanding requirements.
+
+### Main Files
+
+| File | Responsibility |
+|---|---|
+| `sections/assessment-media-carousel.liquid` | Section schema, block definitions, padding and spacing settings |
+| `snippets/assessment-media.liquid` | Media rendering and conditional button link markup |
+| `assets/assessment-media-carousel.css` | Desktop/mobile media dimensions and crop styling |
 
 ---
 
@@ -68,7 +120,7 @@ The generated `active_products.csv` contains:
 | `Price` | Lowest retrieved variant price |
 | `Collections` | Product collection names |
 | `Tags` | Product tags |
-| `Sale` | Yes or No, based on variant discount status |
+| `Sale` | Boolean (`True` / `False`), based on variant discount status |
 
 ### Code Organization
 
@@ -85,7 +137,8 @@ The Python implementation follows the Single Responsibility Principle (SRP) to k
 
 - **10 active products retrieved**
 - **10 products successfully exported**
-- **3 discounted products correctly identified**
+- **3 discounted products correctly identified** (`True`), with **7 regular-priced products** (`False`)
+- Automated CSV validation passed: 10 products exported, 3 `True`, 7 `False`
 - Pagination and incomplete nested-data checks implemented
 
 ---
@@ -98,16 +151,19 @@ The following structure highlights the assessment-specific files and the relevan
 shopify-assessment/
 │
 ├── assets/
-│   └── assessment-discount.css
+│   ├── assessment-discount.css
+│   └── assessment-media-carousel.css
 │
 ├── layout/
 │   └── theme.liquid
 │
 ├── snippets/
-│   └── price.liquid
+│   ├── price.liquid
+│   └── assessment-media.liquid
 │
 ├── sections/
-│   └── main-cart-items.liquid
+│   ├── main-cart-items.liquid
+│   └── assessment-media-carousel.liquid
 │
 ├── scripts/
 │   ├── shopify_settings.py
@@ -122,13 +178,17 @@ shopify-assessment/
 └── README.md
 ```
 
-*The structure above highlights the files relevant to Q1 and Q3. Other standard Dawn theme files and directories are omitted for clarity.*
+*The structure above highlights the assessment-specific files relevant to Q1, the partial Q2 implementation and Q3. Other standard Dawn theme files and directories are omitted for clarity.*
 
 ### Architecture
 
 **Q1 — Storefront**
 
 Shopify product pricing → Liquid discount calculation → Discount badge styling → Storefront and cart display.
+
+**Q2 — Media Section**
+
+Section schema and settings → Media block → Dedicated Liquid snippet → Responsive CSS → Storefront image rendering.
 
 **Q3 — Product Export**
 
@@ -140,4 +200,4 @@ Environment configuration → Shopify authentication → GraphQL product retriev
 
 The implementation focuses on readable code, separation of responsibilities, and compatibility with Shopify's existing theme and API architecture.
 
-**Q2 — Reusable Media & Product Carousel** will be documented once implemented.
+**Assessment status:** Q1 and Q3 are complete. Q2 has been partially implemented; verified behavior and remaining requirements are detailed above.
