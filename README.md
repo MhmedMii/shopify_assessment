@@ -1,4 +1,4 @@
-<img width="1441" height="410" alt="CSV_File_Export" src="https://github.com/user-attachments/assets/f822d350-171e-4201-9c42-8295f752e405" /># Shopify Developer Assessment
+# Shopify Developer Assessment
 
 A technical assessment demonstrating Shopify theme customization and product data integration using the Shopify Admin GraphQL API.
 
