@@ -1,4 +1,4 @@
-# Shopify Developer Assessment
+<img width="1441" height="410" alt="CSV_File_Export" src="https://github.com/user-attachments/assets/f822d350-171e-4201-9c42-8295f752e405" /># Shopify Developer Assessment
 
 A technical assessment demonstrating Shopify theme customization and product data integration using the Shopify Admin GraphQL API.
 
@@ -43,15 +43,20 @@ For example, an item originally priced at 15 KWD and reduced to 12 KWD has a **2
 
 ### Screenshots
 
-![Product discount example](screenshots/q1-product-discount.png)
+![Product discount example] <img width="482" height="483" alt="Classic_Shirt_Discount" src="https://github.com/user-attachments/assets/f17b52df-c117-48a0-9363-95ae796496ba" />
 
-![Collection discount examples](screenshots/q1-collection-discounts.png)
 
-![Additional product listings](screenshots/q1-all-products.png)
+![Collection discount examples] <img width="569" height="594" alt="Products_Discount" src="https://github.com/user-attachments/assets/ef3285be-f0e7-4dfe-83d0-2b82ebbf80aa" />
 
-![Remaining collection products](screenshots/q1-additional-products.png)
 
-![Cart discount percentages](screenshots/q1-cart-discounts.png)
+![Additional product listings] <img width="1519" height="938" alt="All_Products_with_discount" src="https://github.com/user-attachments/assets/8efc7a60-b437-4d76-b0b0-916ea5cfe6b5" />
+
+
+![Remaining collection products] <img width="907" height="432" alt="remaining_products_with_discount" src="https://github.com/user-attachments/assets/8e4f07ff-6383-40a5-9a7f-62d9967559f4" />
+
+
+![Cart discount percentages] <img width="1382" height="813" alt="Cart_Discount" src="https://github.com/user-attachments/assets/24b2ef07-d901-4dce-8ce5-b98e92c75599" />
+
 
 ### Verification Results
 
@@ -78,9 +83,11 @@ For example, an item originally priced at 15 KWD and reduced to 12 KWD has a **2
 
 ### Screenshots
 
-![Media section rendering and settings](screenshots/q2-section-media-rendering.png)
+![Media section rendering and settings] <img width="1488" height="813" alt="Media_rendering" src="https://github.com/user-attachments/assets/c11e8364-0f6f-49e9-a760-1b97156413dc" />
 
-![Media block configuration in Theme Editor](screenshots/q2-media-block-settings.png)
+
+![Media block configuration in Theme Editor] <img width="237" height="457" alt="Media picker   button fields" src="https://github.com/user-attachments/assets/24df325f-7536-4560-aae7-cf1039aa7ac4" />
+
 
 ### Verification Results
 
@@ -129,7 +136,9 @@ The remaining requirements were reviewed and the implementation approach was pla
 
 ### Screenshot
 
-![Product export CSV with Boolean Sale values](screenshots/q3-csv-export.png)
+![Product export CSV with Boolean Sale values] <img width="1441" height="410" alt="CSV_File_Export" src="https://github.com/user-attachments/assets/9b9333c3-de5c-4c06-b189-f6f9a2aa2637" />
+
+
 
 ### CSV Output
 
